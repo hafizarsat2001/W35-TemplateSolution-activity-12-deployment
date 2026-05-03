@@ -1,0 +1,32 @@
+{
+  "environment": "staging",
+  "platform": "vercel",
+  "deployment": {
+    "strategy": "atomic",
+    "timeout": 300000,
+    "healthCheckRetries": 3,
+    "healthCheckInterval": 10000,
+    "rollbackOnFailure": true
+  },
+  "services": {
+    "app": {
+      "enabled": true,
+      "healthCheck": "/health",
+      "environment": {
+        "NODE_ENV": "staging"
+      }
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "alertThresholds": {
+      "responseTime": 2000,
+      "errorRate": 0.05,
+      "availability": 0.95
+    },
+    "healthCheckInterval": 60000
+  },
+  "security": {
+    "requireScanPass": false
+  }
+}

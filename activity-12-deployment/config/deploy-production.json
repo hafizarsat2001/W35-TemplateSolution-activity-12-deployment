@@ -1,0 +1,37 @@
+{
+  "environment": "production",
+  "platform": "vercel",
+  "deployment": {
+    "strategy": "atomic",
+    "timeout": 300000,
+    "healthCheckRetries": 5,
+    "healthCheckInterval": 10000,
+    "rollbackOnFailure": true
+  },
+  "services": {
+    "app": {
+      "enabled": true,
+      "healthCheck": "/health",
+      "environment": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "alertThresholds": {
+      "responseTime": 1000,
+      "errorRate": 0.01,
+      "availability": 0.99
+    },
+    "healthCheckInterval": 30000
+  },
+  "security": {
+    "requireScanPass": true,
+    "secrets": {
+      "required": [
+        "NODE_ENV"
+      ]
+    }
+  }
+}
