@@ -22,9 +22,9 @@ async function deploy() {
     // Check if Vercel CLI is available
     try {
       execSync('vercel --version', { stdio: 'pipe' });
-      console.log(chalk.green('Vercel CLI found'));
+      console.log(chalk.green('Vercel CLI found test1'));
     } catch (error) {
-      console.log(chalk.red('Vercel CLI not found'));
+      console.log(chalk.red('Vercel CLI not found test2'));
       console.log(chalk.gray('Install it with: npm install -g vercel'));
       console.log(chalk.gray('Or deploy at https://vercel.com/new'));
       return;
