@@ -31,7 +31,7 @@ async function deploy() {
     }
 
     // Step 2: Pre-deployment checks (TODO 3 - COMPLETE SOLUTION)
-    console.log(chalk.yellow('\nStep 2: Running pre-deployment checks...'));
+    console.log(chalk.yellow('\nStep 2: Running pre-deployment checks...test'));
 
     // Log git info
     try {
